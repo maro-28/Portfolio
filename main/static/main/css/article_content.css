@@ -4,7 +4,7 @@ main{
 }
 .article{
   margin: 0 auto;
-  width: 35rem;
+  width: 50rem;
   padding: 2rem 2.5rem;
   border-radius: 2rem;
 }
@@ -123,12 +123,12 @@ h2:before{
   margin-bottom: 0.5rem;
 }
 .comment_name{
-  width: 28rem;
+  width: 42rem;
   margin-bottom: 0.5rem;
 }
 .comment_form textarea{
   font-size: 0.9rem;
-  width: 28rem;
+  width: 42rem;
   height: 10rem;
   margin-bottom: 0.5rem;
   background-color: #fff;
