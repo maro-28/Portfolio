@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+<!-- ページのタイトル -->
+{% block pagetitle %}
+{% endblock %}
+
+<!-- css -->
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static "main/css/about_blog.css" %}">
+{% endblock %}
+
+<!-- js -->
+{% block js %}
+{% endblock%}
+
+{% block main %}
+<main>
+  <h1>About This Blog</h1>
+  <p>This is maro's portfolio created by Django.</p>
+</main>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+<!-- css -->
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static "main/css/top.css" %}">
+{% endblock %}
+
+<!-- main -->
+{% block main %}
+<main>
+  <div style="width: 70%;margin: 0px auto;">
+      <hr />
+      {% for post in post_list %}
+      <div>
+        <h3>{{ post.title }}</h3>
+        <div style="text-align: right;">
+          <a href="{% url 'main:post_detail' post.pk %}">read more</a>
+        </div>
+      </div>
+      <hr />
+      {% endfor %}
+  </div>
+</main>
+{% endblock %}

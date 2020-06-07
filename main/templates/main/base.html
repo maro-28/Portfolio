@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- IEの最適化 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- レスポンシブデザイン -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ページのタイトル -->
+    {% block pagetitle%}
+    <title>maro's HomePage</title>
+    {% endblock %}
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- jquery -->
+    <script type="text/javascript" src="{% static 'main/js/jquery-3.3.1.min.js'%}"></script>
+
+    <!-- ページトップに戻る -->
+    <script type="text/javascript" src="{% static 'main/js/top_scroll.js' %}"></script>
+
+    <!--nav固定のjquery -->
+    <script type="text/javascript" src="{% static 'main/js/fixed_nav.js' %}"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}">
+
+    {% block css %}
+    {% endblock %}
+
+    <!-- js -->
+    {% block js %}
+    {% endblock %}
+
+  </head>
+  <body>
+
+    <!-- header -->
+    {% block header %}
+    <header>
+        <div class="p p-1"></div>
+        <div class="p p-2"></div>
+        <div class="p p-3"></div>
+        
+        <div class="header_right">
+        <li><a href="{% url "main:about_me" %}" class="white">About me</a></li>
+        <li><a href="{% url "main:about_blog" %}" class="white">About this site</a></li>
+      </div>
+      <div class="center">
+        <a href="{% url "main:top" %}" class="white">
+          <p class="main-title" >maro's HomePage</p>
+          <p class="subtitle">～My portfolio like blog created by Django～</p>
+        </a>
+      </div>
+    </header>
+    {% endblock header%}
+
+    <!-- nav -->
+    {% block nav %}
+    <nav>
+      <ul class="menu f09 Bblue">
+        <li class="menu_home center">
+          <a href="{% url "main:top" %}" class="white"><p>HOME</p></a>
+        </li>
+        {% for category in category_list %}
+        <li class="menu__single">
+          <input type="checkbox" id="label{{ forloop.counter }}" class="cssacc" />
+          <label for="label{{ forloop.counter }}" class="white">{{ category.name }}</label>
+          <ul class="menu__second-level">
+            {% for subcategory in subcategory_list %}
+            {% ifequal subcategory.target_category.name category.name %}
+            <li><a href="{% url "main:subcategory" subcategory.name %}" class="white Bblue">{{ subcategory.name }}</a></li>
+            {% endifequal %}
+            {% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+        <li class="menu_search">
+          <form action="{% url "main:top" %}" class="search_form">
+            <div class="search_content">
+              {{ global_form.keyword }}
+              <button type="submit" class="search_button"><i class="fas fa-search white"></i></button>
+            </div>
+          </form>
+        </li>
+      </ul>
+    </nav>
+    {% endblock %}
+
+    <!-- main -->
+    {% block main %}
+    {% endblock %}
+
+    <!-- footer -->
+    <footer class="f08 center Bpurple">
+      <ul class="SNS">
+        <li><a href="https://twitter.com/maroblog28"><i class="fab fa-twitter-square white f12"></i></a></li>
+          <li><a href="https://github.com/maro-28"><i class="fab fa-github-square white f12"></i></a></li>
+      </ul>
+      <p class="white">Copyright ©️ 2019 maro All Rights Reserved.</p>
+    </footer>
+    <p class="f1" id="PageTopBtn"><a href="#wrap"><i class="fas fa-angle-double-up faa-float animated"></i></a></p>
+  </body>
+</html>

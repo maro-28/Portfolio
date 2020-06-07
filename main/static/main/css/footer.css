@@ -1,0 +1,13 @@
+footer{
+  width: auto;
+  height: 6rem;
+}
+.SNS{
+  height: 2.25rem;
+  width: auto;
+  padding-top: 0.75rem;
+}
+footer li{
+  display: inline;
+  padding: 0 0.5rem;
+}

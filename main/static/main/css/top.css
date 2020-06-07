@@ -1,0 +1,115 @@
+@import "base.css";
+@import "nav.css";
+@import "footer.css";
+header{
+  width: auto;
+  height: 45rem;
+  background-image: url("header_blue_large.jpg");
+  background-position: 0 50%;
+  background-size: cover;
+}
+
+.main-title{
+  font-size: 3.5rem;
+  padding-top: 20rem;
+  font-weight: normal;
+}
+
+.subtitle{
+  font-size: 2.5rem;
+}
+
+/* 管理人とこのブログについて */
+.header_right li{
+  float: right;
+  margin: 0 1rem;
+  padding-top: 1rem;
+}
+
+.latest_article_title{
+  font-size: 1.5rem;
+}
+/*流れ星*/
+@keyframes particleAnimation1
+{
+    from {
+        left: -50px;
+        top: -50px;
+    }
+    to {
+        left: 400px;
+        top: 400px;
+    }
+}
+@keyframes particleAnimation2
+{
+    from {
+        left: 100px;
+        top: -130px;
+    }
+    to {
+        left: 879px;
+        top: 320px;
+    }
+}
+@keyframes particleAnimation3
+{
+    from {
+        left: 100%;
+        top: -100px;
+    }
+    to {
+        left: calc(100% - 450px);
+        top: 350px;
+    }
+}
+
+.p{
+  position:relative;
+  left:0px;
+  top:50px;
+  width:1px;
+  height:1px;
+  background-color:#ffffff;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.p::before{
+  position:absolute;
+  display:block;
+  content:"";
+  width:100px;
+  top:0px;
+  height:1px;
+}
+
+.p-1::before{
+ right:1px;
+  background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%);
+}
+.p-2::before{
+ right:1px;
+  background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%);
+}
+.p-3::before{
+ left:1px;
+  background: linear-gradient(to left, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%);
+}
+
+.p-1{
+  animation-name:particleAnimation1;
+  animation-duration:9s;
+  transform: rotate(45deg);
+}
+.p-2{
+  animation-name:particleAnimation2;
+  transform: rotate(30deg);
+  animation-duration:7s;
+  top:10%;
+}
+.p-3{
+  animation-name:particleAnimation3;
+  transform: rotate(-45deg);
+  animation-duration:11s;
+  top:20%;
+}
