@@ -29,6 +29,16 @@ header{
 .latest_article_title{
   font-size: 1.5rem;
 }
+
+h1 {
+  color: #3964a8;
+  padding: 1rem 0;
+}
+
+h2 {
+  padding: 0.5rem 0;
+}
+
 /*流れ星*/
 @keyframes particleAnimation1
 {
@@ -112,4 +122,29 @@ header{
   transform: rotate(-45deg);
   animation-duration:11s;
   top:20%;
+}
+
+.btn-gradient-radius {
+  display: inline-block;
+  padding: 7px 20px;
+  margin: 0.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #B4AEDE 0%, #7C94D4 100%);
+  transition: .4s;
+}
+
+.btn-gradient-radius:hover {
+  background-image: linear-gradient(45deg, #B4AEDE 0%, #7C94D4 100%);
+}
+
+.contacts{
+  text-align: center;
+}
+
+.contacts li{
+  display: inline;
+  padding: 0 4rem;
+  font-size: 4rem;
 }
