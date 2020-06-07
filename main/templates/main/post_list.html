@@ -1,31 +1,44 @@
 {% extends "main/base.html" %}
 {% load static %}
 
-<!-- css -->
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{% static "main/css/top.css" %}">
 {% endblock %}
 
-<!-- main -->
+{% block header %}
+<!-- 流れ星 -->
+<div class="star star-1 Bwhite"></div>
+<div class="star star-2 Bwhite"></div>
+<div class="star star-3 Bwhite"></div>
+{% endblock header %}
+
 {% block main %}
 <main>
   <div style="width: 50%;margin: 0px auto;">
-  <h1>Welcome to My Portfolio !!</h1>
-      <hr />
-      {% for post in post_list %}
-      <div>
-        <h2>{{ post.title }}</h2>
-        <div style="text-align: right;">
-          <a href="{% url 'main:post_detail' post.pk %}" class="btn-gradient-radius">read more</a>
-        </div>
-      </div>
-      <hr />
+    <h1 class="blue">Welcome to My Portfolio !!</h1>
+    <hr />
+    
+    {% for post in post_list %}
+    <div>
+      <h2 class="blue">{{ post.title }}</h2>
+      <!-- tag -->
+      <ul class="tag f08 blue bold">
+      {% for t in post.tag.all %}
+      <li><a href="{% url "main:tag" t.name %}" class="blue">{{ t }}</a></li>
       {% endfor %}
-      <h2 style="text-align: center;">Contacts</h2>
-      <ul class="contacts">
-        <li><a href="https://twitter.com/maroblog28"><i class="fab fa-twitter-square"></i></a></li>
-        <li><a href="https://github.com/maro-28"><i class="fab fa-github-square"></i></a></li>
       </ul>
+      <div class="right">
+        <a href="{% url 'main:post_detail' post.pk %}" class="btn-gradient-radius white">read more</a>
+      </div>
+    </div>
+    <hr />
+    {% endfor %}
+    
+    <h2 class="blue" style="text-align: center;">Contacts</h2>
+    <ul class="contacts center f40">
+      <li><a href="https://twitter.com/maroblog28" class="purple"><i class="fab fa-twitter-square"></i></a></li>
+      <li><a href="https://github.com/maro-28" class="purple"><i class="fab fa-github-square"></i></a></li>
+    </ul>
   </div>
 </main>
 {% endblock %}

@@ -17,14 +17,17 @@ a:hover{
 }
 
 /* 色の設定 */
-.blue{
-  color: #3964a8;
-}
 .white{
     color: #ffffff;
 }
+.blue{
+  color: #3964a8;
+}
 .black{
     color: #313534;
+}
+.purple{
+    color: #b0acde;
 }
 /*背景色の設定*/
 .Bwhite{
@@ -51,6 +54,15 @@ a:hover{
 }
 .f12{
     font-size: 1.2rem;
+}
+.f25{
+    font-size: 2.5rem;
+}
+.f35{
+    font-size: 3.5rem;
+}
+.f40{
+    font-size: 4rem;
 }
 .bold{
     font-weight: bold;
