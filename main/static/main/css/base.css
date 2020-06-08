@@ -23,6 +23,9 @@ a:hover{
 .blue{
   color: #3964a8;
 }
+.red{
+    color: #a83964;
+  }
 .black{
     color: #313534;
 }
@@ -85,8 +88,6 @@ a:hover{
 #PageTopBtn a {
     display: block; /*配置の調整*/
     text-decoration: none; /*文字の下線を消す*/
-    color: #a83964;/*文字の色*/
-    background: #fff; /*ボタンの背景色*/
     text-align: center; /*文字を中央に配置*/
     border: solid 2px #a83964;
     border-radius: 50%; /*ボタンの角を少し丸くする*/
@@ -104,7 +105,7 @@ a:hover{
 #PageTopBtn a {
     width: 2.5rem; /*ボタンの幅*/
     height: 2.5rem; /*ボタンの高さ*/
-    padding: 0.5rem 0 0 0; /*文字の配置場所の調整*/
+    padding: 0.2rem 0 0 0; /*文字の配置場所の調整*/
 }
 }
 
