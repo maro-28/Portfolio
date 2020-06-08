@@ -3,7 +3,6 @@
     width: 100%;
     height: 2.5rem;
     margin: 0 auto;
-    font-weight: normal;
 }
 /* HOME */
 .menu_home{
@@ -125,7 +124,6 @@ li.menu__single:hover ul.menu__second-level {
 .menu_search button{
   background: none;
   border: none;
-  font-size: 0.9rem;
   cursor: pointer;
   cursor: hand;
 }
