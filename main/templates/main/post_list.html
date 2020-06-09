@@ -20,7 +20,7 @@
     
     {% for post in post_list %}
     <div>
-      <h2 class="blue">{{ post.title }}</h2>
+      <h2><a href="{% url 'main:post_detail' post.pk %}" class="blue">{{ post.title }}</a></h2>
       <!-- tag -->
       <ul class="tag f08 blue bold">
       {% for t in post.tag.all %}
